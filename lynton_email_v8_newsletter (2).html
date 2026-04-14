@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;font-family:'Inter',sans-serif;padding:2rem 1rem}
+.wrap{max-width:600px;margin:0 auto;background:#0a0a0f;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07)}
+.pre{background:#0a0a0f;padding:10px 32px;font-size:11px;color:rgba(255,255,255,0.2);border-bottom:1px solid rgba(255,255,255,0.05)}
+.hdr{padding:22px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.4px}
+.hdr-link{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none}
+
+/* HERO */
+.hero{padding:64px 40px 60px;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 20%,rgba(168,85,247,0.18) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(249,115,22,0.12) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 50% 50%,rgba(236,72,153,0.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle 1.5px at 15% 25%,rgba(168,85,247,0.6) 0%,transparent 100%),radial-gradient(circle 1px at 80% 15%,rgba(249,115,22,0.5) 0%,transparent 100%),radial-gradient(circle 2px at 70% 70%,rgba(168,85,247,0.4) 0%,transparent 100%),radial-gradient(circle 1px at 30% 65%,rgba(236,72,153,0.5) 0%,transparent 100%),radial-gradient(circle 1.5px at 90% 45%,rgba(249,115,22,0.4) 0%,transparent 100%),radial-gradient(circle 1px at 55% 85%,rgba(168,85,247,0.35) 0%,transparent 100%),radial-gradient(circle 2px at 10% 55%,rgba(249,115,22,0.3) 0%,transparent 100%),radial-gradient(circle 1px at 60% 10%,rgba(236,72,153,0.4) 0%,transparent 100%);pointer-events:none}
+.hero-pill{position:relative;display:inline-flex;align-items:center;gap:8px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);border-radius:100px;padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#c084fc;margin-bottom:28px}
+.hero-pill-dot{width:6px;height:6px;border-radius:50%;background:#a855f7;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero-h1{position:relative;font-size:46px;font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:8px}
+.hero-h1-sub{position:relative;font-size:46px;font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:24px;background:linear-gradient(90deg,#a855f7 0%,#ec4899 45%,#f97316 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-body{position:relative;font-size:16px;line-height:1.7;color:rgba(255,255,255,0.55);max-width:480px;margin-bottom:36px}
+.hero-btns{position:relative;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-white{display:inline-block;background:#fff;color:#0a0a0f;font-weight:700;font-size:13px;padding:12px 24px;border-radius:8px;text-decoration:none}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);font-weight:600;font-size:13px;padding:12px 24px;border-radius:8px;text-decoration:none}
+
+/* FOUNDER NOTE */
+.founder{padding:44px 32px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.founder-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:24px}
+.founder-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.founder-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,rgba(168,85,247,0.25),rgba(249,115,22,0.25));border:1px solid rgba(168,85,247,0.3);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#c084fc;flex-shrink:0}
+.founder-name{font-size:15px;font-weight:700;color:#fff}
+.founder-title{font-size:12px;color:rgba(255,255,255,0.3);margin-top:2px}
+.founder-body p{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.6)}
+.founder-body p+p{margin-top:14px}
+.founder-pull{margin:22px 0;padding-left:18px;border-left:2px solid rgba(168,85,247,0.4)}
+.founder-pull p{font-size:15px;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.5)}
+.founder-sig{margin-top:22px;font-size:14px;font-weight:600;color:rgba(255,255,255,0.35)}
+
+/* SERVICES */
+.svc-section{padding:40px 32px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.divlabel{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:24px}
+.svc-list{display:flex;flex-direction:column}
+.svc-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.svc-row:last-child{border-bottom:none;padding-bottom:0}
+.svc-icon{width:36px;height:36px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.ic-purple{background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.2)}
+.ic-pink{background:rgba(236,72,153,0.12);border:1px solid rgba(236,72,153,0.2)}
+.ic-orange{background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.2)}
+.ic-teal{background:rgba(20,184,166,0.12);border:1px solid rgba(20,184,166,0.2)}
+.svc-copy h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.svc-copy p{font-size:13px;line-height:1.55;color:rgba(255,255,255,0.4)}
+.svc-link{font-size:12px;font-weight:600;background:linear-gradient(90deg,#a855f7,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;margin-top:4px;display:inline-block}
+
+/* PUBLICATION */
+.pub{padding:32px 32px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:flex-start;gap:16px}
+.pub-icon{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(249,115,22,0.15));border:1px solid rgba(168,85,247,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.pub-icon svg{width:18px;height:18px;fill:#c084fc}
+.pub-copy h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px}
+.pub-copy p{font-size:13px;line-height:1.55;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.btn-grad{display:inline-block;background:linear-gradient(90deg,#a855f7,#ec4899,#f97316);color:#fff;font-weight:700;font-size:12px;padding:9px 18px;border-radius:6px;text-decoration:none}
+
+/* CTA */
+.cta-bar{margin:32px 32px 0;background:linear-gradient(135deg,rgba(168,85,247,0.1),rgba(249,115,22,0.06));border:1px solid rgba(168,85,247,0.18);border-radius:10px;padding:24px 22px;text-align:center}
+.cta-bar h3{font-size:18px;font-weight:900;letter-spacing:-0.4px;color:#fff;margin-bottom:6px}
+.cta-bar h3 span{background:linear-gradient(90deg,#a855f7,#ec4899,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-bar p{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:18px;line-height:1.5}
+.cta-sub{display:block;font-size:11px;color:rgba(255,255,255,0.2);margin-top:10px}
+
+/* FOOTER */
+.footer{padding:20px 32px 24px;margin-top:32px;border-top:1px solid rgba(255,255,255,0.05)}
+.ft-logo{font-size:13px;font-weight:800;color:#fff;margin-bottom:8px}
+.ft-p{font-size:11px;color:rgba(255,255,255,0.18);line-height:1.7}
+.ft-links{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap}
+.ft-links a{font-size:11px;color:rgba(255,255,255,0.25);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="pre">Lynton has reimagined everything. Here's what's new.</div>
+
+  <div class="hdr">
+    <div class="logo">Lynton</div>
+    <a href="#" class="hdr-link">View in browser</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-pill"><div class="hero-pill-dot"></div>We've Reimagined Everything</div>
+    <div class="hero-h1">Break outside the box.</div>
+    <div class="hero-h1-sub">Build something limitless.</div>
+    <p class="hero-body">The all-in-one era is over. AI has made custom, open-source infrastructure accessible at any scale and we've rebuilt our entire practice around it. What we build now, you own forever.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-white">See What We Build</a>
+      <a href="#" class="btn-ghost-w">Why It Matters</a>
+    </div>
+  </div>
+
+  <!-- FOUNDER NOTE -->
+  <div class="founder">
+    <div class="founder-label">A note from our founder</div>
+    <div class="founder-header">
+      <div class="founder-avatar">DL</div>
+      <div>
+        <div class="founder-name">Daniel Lynton</div>
+        <div class="founder-title">Founder and CEO, Lynton</div>
+      </div>
+    </div>
+    <div class="founder-body">
+      <p>When I started Lynton in 1999, software was something you crafted. The technology a company ran was a direct reflection of its ambition. For our first decade, we helped companies build systems they truly owned.</p>
+      <p>Then SaaS arrived. We shifted with it. We became one of the most technical HubSpot partners on the planet, building custom integrations, pioneering apps, pushing the platform further than almost anyone. For sixteen years, we believed that was the path forward.</p>
+      <div class="founder-pull">
+        <p>"The architecture of monolithic all-in-one platforms carries inherent ceilings by design. We watched company after company hit them."</p>
+      </div>
+      <p>Those years taught us what bad looks like. Where systems break. And what to replace them with. AI didn't just change what we can build, it changed the math entirely. Custom, open-source infrastructure is now accessible at any scale. The world's biggest brands already run on it. Now any business can.</p>
+      <p>We've rebuilt Lynton around a simple belief: the path forward leads back to something familiar. Software shaped around the way your business actually works, owned by the people who depend on it. The difference now is that AI rewrote the rules for what a small team can build.</p>
+      <p>Let's build software we own again.</p>
+    </div>
+    <div class="founder-sig">Daniel Lynton, Founder and CEO</div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="svc-section">
+    <div class="divlabel">What we now offer</div>
+    <div class="svc-list">
+      <div class="svc-row">
+        <div class="svc-icon ic-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <div class="svc-copy">
+          <h4>AI-Native Websites</h4>
+          <p>Built on Astro or Next.js. AI search, personalization, and content generation baked in. Code you own with sub-second loads and 100 Lighthouse scores.</p>
+          <a href="#" class="svc-link">See how it works</a>
+        </div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-icon ic-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/><path d="M18 14s1 1 1 2"/><path d="M6 14s-1 1-1 2"/></svg>
+        </div>
+        <div class="svc-copy">
+          <h4>Custom AI Agent Builds</h4>
+          <p>We design and build AI agents trained on your business. Lead qualification, support, content ops, and internal workflows handled around the clock. Delivered as code you own.</p>
+          <a href="#" class="svc-link">Learn about agents</a>
+        </div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-icon ic-pink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+        </div>
+        <div class="svc-copy">
+          <h4>The Sovereign Stack</h4>
+          <p>CRM, analytics, email, automation. Best-of-breed open source, connected through a shared data layer. No per-seat pricing. No lock-in.</p>
+          <a href="#" class="svc-link">Explore the stack</a>
+        </div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-icon ic-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="svc-copy">
+          <h4>Free AI Readiness Assessment</h4>
+          <p>We analyze your site in 60 seconds. Tech stack, performance, AI readiness, and what you would save by switching to a modern stack.</p>
+          <a href="#" class="svc-link">Get your assessment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PUBLICATION -->
+  <div class="pub">
+    <div class="pub-icon">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+    </div>
+    <div class="pub-copy">
+      <h4>Subscribe to our AI Publication</h4>
+      <p>Weekly signal on AI marketing, open infrastructure, and the end of the monolith. No hype. Just what is actually changing and why it matters for your business.</p>
+      <a href="#" class="btn-grad">Subscribe free</a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bar">
+    <h3>What would you build if you <span>owned your stack?</span></h3>
+    <p>Free 60-second assessment. No commitment, no sales call. Just clarity on where you stand.</p>
+    <a href="#" class="btn-grad">Get Your Free Assessment</a>
+    <span class="cta-sub">lyntonweb.com · Start a conversation anytime</span>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="ft-logo">Lynton</div>
+    <p class="ft-p">Building AI-native infrastructure outside the walled garden.<br>2026 Lynton. All rights reserved. You're receiving this as a valued contact.</p>
+    <div class="ft-links">
+      <a href="#">Unsubscribe</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">lyntonweb.com</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
