@@ -1,0 +1,262 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+  .em-wrap { background: #EDEBE6; padding: 32px 16px; font-family: 'Source Sans 3', sans-serif; }
+  .em-shell { max-width: 620px; margin: 0 auto; background: #ffffff; border: 0.5px solid #ccc9c0; }
+  .em-header { background: #1a1a1a; padding: 0; }
+  .em-header-bar { background: #BE1E2D; height: 5px; }
+  .em-logo-row { padding: 20px 32px 18px; display: flex; align-items: center; justify-content: space-between; }
+  .em-logo { font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; color: #ffffff; text-transform: uppercase; }
+  .em-logo span { color: #BE1E2D; }
+  .em-logo-sub { font-size: 9px; letter-spacing: 0.22em; color: #888; text-transform: uppercase; margin-top: 3px; }
+  .em-badge { background: #BE1E2D; color: #fff; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 11px; font-weight: 600; }
+  .em-welcome { background: #FAF9F7; border-left: 4px solid #BE1E2D; padding: 32px 36px 28px 32px; }
+  .em-issue { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #9a8070; margin-bottom: 16px; font-weight: 600; }
+  .em-welcome-inner { display: flex; gap: 20px; align-items: flex-start; }
+  .em-logo-mark { width: 52px; height: 52px; flex-shrink: 0; background: #1a1a1a; display: flex; align-items: center; justify-content: center; padding: 10px; }
+  .em-welcome-body { flex: 1; }
+  .em-welcome-body p { font-size: 14.5px; color: #3a3530; line-height: 1.75; margin: 0 0 12px; }
+  .em-welcome-body p:last-of-type { margin-bottom: 0; }
+  .em-welcome-sig { margin-top: 16px; border-top: 0.5px solid #ddd8cf; padding-top: 14px; }
+  .em-sig-name { font-family: 'Playfair Display', serif; font-size: 15px; color: #1a1a1a; font-style: italic; }
+  .em-sig-title { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #9a8878; margin-top: 2px; }
+  .em-divider { height: 1px; background: #e8e4dc; margin: 0; }
+  .em-section { padding: 32px 36px; }
+  .em-section-alt { padding: 32px 36px; background: #FAF9F7; }
+  .em-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #BE1E2D; font-weight: 700; margin-bottom: 6px; }
+  .em-section h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: #1a1a1a; margin: 0 0 10px; font-weight: 600; line-height: 1.3; }
+  .em-section p { font-size: 14.5px; color: #4a4540; line-height: 1.7; margin: 0 0 16px; }
+  .em-cta-link { display: inline-block; color: #BE1E2D; font-size: 13px; font-weight: 700; text-decoration: none; border-bottom: 1.5px solid #BE1E2D; padding-bottom: 1px; letter-spacing: 0.04em; }
+  .em-cta-btn { display: inline-block; background: #1a1a1a; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 11px 22px; text-decoration: none; margin-top: 6px; }
+  .em-cta-btn-outline { display: inline-block; border: 1.5px solid #1a1a1a; color: #1a1a1a; font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 10px 20px; text-decoration: none; margin-top: 6px; }
+  .em-story-card { border-left: 3px solid #BE1E2D; padding: 14px 18px; background: #fff; border: 0.5px solid #ddd8cf; border-left: 3px solid #BE1E2D; margin-bottom: 14px; }
+  .em-story-card:last-child { margin-bottom: 0; }
+  .em-story-tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #BE1E2D; margin-bottom: 5px; }
+  .em-story-title { font-size: 15px; font-weight: 600; color: #1a1a1a; margin: 0 0 6px; line-height: 1.3; }
+  .em-story-body { font-size: 13.5px; color: #5a5550; line-height: 1.6; margin: 0 0 10px; }
+  .em-story-link { font-size: 12px; font-weight: 700; color: #BE1E2D; letter-spacing: 0.04em; text-decoration: none; }
+  .em-quote-block { background: #1a1a1a; padding: 28px 32px; position: relative; margin: 20px 0 0; }
+  .em-quote-mark { font-family: 'Playfair Display', serif; font-size: 64px; color: #BE1E2D; line-height: 0.7; margin-bottom: 8px; display: block; }
+  .em-quote-block blockquote { font-family: 'Playfair Display', serif; font-size: 17px; color: #f0ebe4; line-height: 1.55; margin: 0 0 14px; font-style: italic; }
+  .em-quote-attribution { font-size: 12px; color: #9a8878; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+  .em-quote-cta { margin-top: 18px; display: block; font-size: 11px; color: #e8a88a; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
+  .em-upload-box { border: 1.5px dashed #c4bdb0; padding: 24px 20px; text-align: center; background: #fff; }
+  .em-upload-icon { width: 36px; height: 36px; margin: 0 auto 10px; }
+  .em-upload-box h3 { font-size: 15px; font-weight: 700; color: #1a1a1a; margin: 0 0 6px; }
+  .em-upload-box p { font-size: 13px; color: #7a756e; margin: 0 0 16px; line-height: 1.5; }
+  .em-steps { display: flex; gap: 10px; margin-top: 14px; }
+  .em-step { flex: 1; text-align: center; }
+  .em-step-num { width: 28px; height: 28px; border-radius: 50%; background: #BE1E2D; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 7px; }
+  .em-step p { font-size: 11.5px; color: #5a5550; margin: 0; line-height: 1.45; }
+  .em-resource-row { display: flex; gap: 12px; margin-top: 14px; }
+  .em-resource-card { flex: 1; border: 0.5px solid #ddd8cf; padding: 14px 14px 16px; background: #fff; }
+  .em-resource-icon { font-size: 16px; margin-bottom: 7px; display: block; }
+  .em-resource-card h4 { font-size: 13px; font-weight: 700; color: #1a1a1a; margin: 0 0 4px; }
+  .em-resource-card p { font-size: 12px; color: #7a756e; margin: 0 0 10px; line-height: 1.45; }
+  .em-resource-link { font-size: 11.5px; font-weight: 700; color: #BE1E2D; letter-spacing: 0.04em; text-decoration: none; }
+  .em-footer { background: #1a1a1a; padding: 28px 36px; }
+  .em-footer-logo { font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.15em; color: #fff; text-transform: uppercase; margin-bottom: 12px; }
+  .em-footer-logo span { color: #BE1E2D; }
+  .em-footer-links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 16px; }
+  .em-footer-links a { font-size: 11px; color: #999; text-decoration: none; letter-spacing: 0.03em; }
+  .em-footer-social { display: flex; gap: 10px; margin-bottom: 20px; }
+  .em-social-icon { width: 28px; height: 28px; border: 0.5px solid #444; display: flex; align-items: center; justify-content: center; }
+  .em-social-icon svg { width: 12px; height: 12px; fill: #999; }
+  .em-footer-legal { font-size: 10px; color: #444; line-height: 1.5; border-top: 0.5px solid #333; padding-top: 14px; }
+  .em-alert-strip { background: #BE1E2D; padding: 10px 36px; display: flex; align-items: center; gap: 12px; }
+  .em-alert-strip p { color: #fff; font-size: 12px; font-weight: 600; margin: 0; letter-spacing: 0.04em; }
+  .em-alert-link { color: #ffd0c8; font-size: 12px; font-weight: 700; text-decoration: underline; white-space: nowrap; }
+</style>
+
+<div class="em-wrap">
+<h2 class="sr-only">Therma-Tru Certified Installer monthly newsletter email mockup</h2>
+<div class="em-shell">
+
+  <div class="em-header">
+    <div class="em-header-bar"></div>
+    <div class="em-logo-row">
+      <div>
+        <div class="em-logo">Therma<span>&#x25A0;</span>Tru<sup style="font-size:10px;color:#BE1E2D;">®</sup></div>
+        <div class="em-logo-sub">Doors</div>
+      </div>
+      <div class="em-badge">Certified Installer Network</div>
+    </div>
+  </div>
+
+  <div class="em-welcome">
+    <div class="em-issue">April 2026 &nbsp;·&nbsp; Installer Edition</div>
+    <div class="em-welcome-inner">
+      <div class="em-logo-mark">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+          <rect width="14" height="14" x="1" y="1" fill="#BE1E2D"/>
+          <rect width="14" height="14" x="17" y="1" fill="#ffffff" opacity="0.15"/>
+          <rect width="14" height="14" x="1" y="17" fill="#ffffff" opacity="0.08"/>
+          <rect width="14" height="14" x="17" y="17" fill="#BE1E2D" opacity="0.6"/>
+          <text x="18" y="23" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#ffffff" letter-spacing="0.5">TT</text>
+        </svg>
+      </div>
+      <div class="em-welcome-body">
+        <p>Spring is here — and if your schedule looks anything like what we're hearing from installers around the country, you're already busy. That's a good problem to have.</p>
+        <p>This month we're sharing a couple of project stories from the field, reminding you about Q1 invoice uploads, and pointing you to a few resources in the portal worth a look before the season gets into full swing.</p>
+        <p>As always, if there's something you need from us — a spec, a how-to, a conversation with your rep — don't hesitate to reach out.</p>
+        <div class="em-welcome-sig">
+          <div class="em-sig-name">Clay Kinnick</div>
+          <div class="em-sig-title">Installer Relations &nbsp;·&nbsp; Therma-Tru Doors</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="em-alert-strip">
+    <p>&#9888;&nbsp; Invoice reminder: Q1 project invoices are due by April 30. <a href="#" class="em-alert-link">Upload yours now →</a></p>
+  </div>
+
+  <div class="em-section">
+    <div class="em-eyebrow">From the Field</div>
+    <h2>Projects happening right now</h2>
+    <p>Here's a look at what certified installers across the country are working on. Got a project worth showcasing? We want to hear about it.</p>
+
+    <div class="em-story-card">
+      <div class="em-story-tag">&#128205; Denver, CO &nbsp;·&nbsp; Whole-Home Remodel</div>
+      <div class="em-story-title">A Smooth-Star® install that turned into a full system upgrade</div>
+      <div class="em-story-body">When the homeowner asked for a single door replacement, [Installer Name] spotted an aging frame and threshold that weren't up to spec. Walking them through the Tru-Defense system — frame, sill, weatherstrip — turned a $1,200 slab sale into a $4,800 complete system. The homeowner was thrilled. The door performs beautifully heading into a Colorado winter.</div>
+      <a href="#" class="em-story-link">Read the full story →</a>
+    </div>
+
+    <div class="em-story-card">
+      <div class="em-story-tag">&#128205; Charlotte, NC &nbsp;·&nbsp; New Construction</div>
+      <div class="em-story-title">Classic-Craft® Mahogany doors on a 12-unit townhome project</div>
+      <div class="em-story-body">Builder [Name] specified Therma-Tru across all 12 units after a successful single-home pilot last spring. [Installer Name] handled all pre-hanging and installation. Completion ahead of schedule. All 12 units closed within 60 days of listing.</div>
+      <a href="#" class="em-story-link">Read the full story →</a>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <a href="#" class="em-cta-btn-outline">Share Your Project for a Future Feature →</a>
+    </div>
+  </div>
+
+  <div class="em-divider"></div>
+
+  <div class="em-section-alt">
+    <div class="em-eyebrow">Success Stories</div>
+    <h2>Hear it from a certified installer</h2>
+    <p style="margin-bottom: 0;">We're building a library of real stories from real pros. This is a placeholder — and a direct ask. We need your help gathering these.</p>
+
+    <div class="em-quote-block">
+      <span class="em-quote-mark">&ldquo;</span>
+      <blockquote>Being listed in the certified installer directory changed how homeowners find me. I get 3 to 4 qualified leads a month directly from the Therma-Tru site — people who already trust the brand and are ready to move forward.</blockquote>
+      <div class="em-quote-attribution">[Installer Name] &nbsp;·&nbsp; [City, State] &nbsp;·&nbsp; Certified since [Year]</div>
+      <a href="#" class="em-quote-cta">Is your story in here? Let's connect you with our team →</a>
+    </div>
+
+    <div style="margin-top: 22px; padding: 16px; background: #fff; border: 0.5px solid #ddd8cf;">
+      <p style="font-size: 13px; color: #5a5550; margin: 0 0 12px;"><strong style="color:#1a1a1a;">&#128276; Internal note for team:</strong> Connect with the sales team to identify installers willing to share their experience. A short 3-question form (What you do, how the program helped, one outcome) is all we need. Even 4–5 stories rotating quarterly would bring this section to life.</p>
+      <a href="#" class="em-cta-link">Flag for sales team outreach →</a>
+    </div>
+  </div>
+
+  <div class="em-divider"></div>
+
+  <div class="em-section">
+    <div class="em-eyebrow">Resource Repository</div>
+    <h2>Everything you need is in the portal</h2>
+    <p>Your Therma-Tru resource portal is updated regularly. Here's what's been added or refreshed this month — bookmark it, share it with your team.</p>
+
+    <div class="em-resource-row">
+      <div class="em-resource-card">
+        <span class="em-resource-icon">&#128196;</span>
+        <h4>Installation Guides</h4>
+        <p>Updated HPD single & double door instructions, including new sill detail drawings.</p>
+        <a href="#" class="em-resource-link">Download PDFs →</a>
+      </div>
+      <div class="em-resource-card">
+        <span class="em-resource-icon">&#127891;</span>
+        <h4>Training Videos</h4>
+        <p>New video: weatherstrip and corner seal pad installation for outswing units.</p>
+        <a href="#" class="em-resource-link">Watch Now →</a>
+      </div>
+      <div class="em-resource-card">
+        <span class="em-resource-icon">&#128247;</span>
+        <h4>Marketing Assets</h4>
+        <p>Co-brandable flyers, leave-behinds, and social graphics for certified installers.</p>
+        <a href="#" class="em-resource-link">Access Assets →</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <a href="#" class="em-cta-btn">Browse the Full Resource Library →</a>
+    </div>
+  </div>
+
+  <div class="em-divider"></div>
+
+  <div class="em-section-alt">
+    <div class="em-eyebrow">Action Required</div>
+    <h2>Don't let invoices slip through the cracks</h2>
+    <p>Staying current on invoice uploads keeps your certification in good standing and ensures accurate project tracking. Here's how to do it in three steps.</p>
+
+    <div class="em-upload-box">
+      <svg class="em-upload-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="2" fill="#FAF9F7"/>
+        <path d="M18 8v14M18 8l-5 5M18 8l5 5" stroke="#BE1E2D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 24v2a2 2 0 002 2h16a2 2 0 002-2v-2" stroke="#9a8878" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <h3>Upload Your Q1 Project Invoices</h3>
+      <p>Due by April 30, 2026. Invoices confirm completed installations and support your certification standing.</p>
+      <a href="#" class="em-cta-btn">Go to Invoice Upload →</a>
+    </div>
+
+    <div class="em-steps">
+      <div class="em-step"><div class="em-step-num">1</div><p>Log in to your installer portal</p></div>
+      <div class="em-step"><div class="em-step-num">2</div><p>Navigate to "My Projects & Invoices"</p></div>
+      <div class="em-step"><div class="em-step-num">3</div><p>Upload PDF or photo of each invoice</p></div>
+    </div>
+
+    <p style="font-size: 12.5px; color: #888; margin: 16px 0 0;">Questions? Contact your Therma-Tru rep or email <a href="#" style="color:#BE1E2D;">installers@thermatru.com</a></p>
+  </div>
+
+  <div class="em-divider"></div>
+
+  <div class="em-section" style="padding-bottom: 28px; background: #1a1a1a; padding-top: 28px;">
+    <div style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 200px;">
+        <div class="em-eyebrow" style="color:#e8a88a;">Quick Links</div>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+          <a href="#" style="font-size:13px; color:#c4b0a0; text-decoration:none;">&#8594; Installer Portal Login</a>
+          <a href="#" style="font-size:13px; color:#c4b0a0; text-decoration:none;">&#8594; Find a Certified Installer Directory</a>
+          <a href="#" style="font-size:13px; color:#c4b0a0; text-decoration:none;">&#8594; Tru-Defense System Overview</a>
+          <a href="#" style="font-size:13px; color:#c4b0a0; text-decoration:none;">&#8594; Warranty Registration</a>
+          <a href="#" style="font-size:13px; color:#c4b0a0; text-decoration:none;">&#8594; Technical Support</a>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <div class="em-eyebrow" style="color:#e8a88a;">This Month's Reminder</div>
+        <p style="color: #9a8878; font-size: 13px; line-height: 1.6; margin: 10px 0 0;">Your listing in the Find a Certified Installer directory is one of the most valuable tools you have. Make sure your profile is current — service area, contact info, and project photos all help homeowners choose you.</p>
+        <a href="#" style="display:inline-block; margin-top:12px; font-size:12px; font-weight:700; color:#e8a88a; letter-spacing:0.05em; text-decoration:none; border-bottom: 1px solid #e8a88a; padding-bottom:1px;">Update Your Profile →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="em-footer">
+    <div class="em-footer-logo">Therma<span>&#x25A0;</span>Tru<sup style="font-size:9px;">®</sup> Doors</div>
+    <div class="em-footer-links">
+      <a href="#">thermatru.com</a>
+      <a href="#">Installer Portal</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Update Preferences</a>
+      <a href="#">Unsubscribe</a>
+    </div>
+    <div class="em-footer-social">
+      <div class="em-social-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+      <div class="em-social-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="#1a1a1a"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#999" stroke-width="2"/></svg></div>
+      <div class="em-social-icon"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a1a1a"/></svg></div>
+      <div class="em-social-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+    </div>
+    <div class="em-footer-legal">
+      You're receiving this email because you are a Therma-Tru Certified Installer. This is a monthly communication sent to active members of the Certified Installer Network.<br><br>
+      Therma-Tru · One Maumee Blue Parkway · Maumee, OH 43537<br>
+      © 2026 Fortune Brands Innovations, Inc. All rights reserved.
+    </div>
+  </div>
+
+</div>
+</div>
